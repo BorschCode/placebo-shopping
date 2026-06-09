@@ -1,0 +1,5 @@
+{% set isOwn = message.sender.id == currentUser.id %}
+<div class="chat-msg chat-msg--{{ isOwn ? 'out' : 'in' }}" id="message-{{ message.id }}">
+    <div class="chat-msg__bubble">{{ message.content }}</div>
+    <div class="chat-msg__time">{{ message.createdAt|date('H:i') }}</div>
+</div>

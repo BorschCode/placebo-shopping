@@ -1,0 +1,24 @@
+{% extends 'themes/autoria/layout.html.twig' %}
+{% block title %}AutoRia — Продаж авто в Україні{% endblock %}
+
+{% block theme_content %}
+    <div style="background:var(--accent);color:#fff;border-radius:16px;padding:32px;margin-bottom:28px">
+        <h1 style="font-size:28px;font-weight:800;margin-bottom:8px">Знайди своє авто</h1>
+        <p style="opacity:.85">Тисячі перевірених авто по всій Україні</p>
+    </div>
+
+    <div class="category-bar">
+        {% for cat in categories %}
+            <a href="{{ path('app_listings', {category: cat.slug}) }}" class="category-chip">{{ cat.icon }} {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">Нові оголошення</h2>
+    <div class="listing-grid">
+        {% for listing in listings %}
+            {% include 'listing/_card.html.twig' %}
+        {% else %}
+            <p style="color:#888">Оголошень поки немає.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

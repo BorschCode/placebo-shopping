@@ -1,0 +1,22 @@
+{# AutoRia theme — car marketplace, chat panel below listing #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="theme-autoria">
+    <nav class="navbar">
+        <a href="{{ path('app_home') }}" class="navbar-brand">🚗 AutoRia</a>
+        <nav class="navbar-nav">
+            <a href="{{ path('app_listings') }}">Авто</a>
+            <a href="{{ path('app_chats') }}">💬 Чати</a>
+            <a href="{{ path('app_profile') }}">{{ app.user.profile ? app.user.profile.displayNameOrEmail : app.user.email }}</a>
+            <a href="{{ path('app_logout') }}">Вийти</a>
+        </nav>
+    </nav>
+
+    <div class="page-content">
+        {% block theme_content %}{% endblock %}
+    </div>
+
+    {% block chat_widget %}{% endblock %}
+</div>
+{% endblock %}

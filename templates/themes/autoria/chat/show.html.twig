@@ -1,0 +1,18 @@
+{% extends 'themes/autoria/layout.html.twig' %}
+{% set other = conversation.otherParticipant(app.user) %}
+{% block title %}Чат з {{ other.profile ? other.profile.displayNameOrEmail : other.email }}{% endblock %}
+
+{% block theme_content %}
+    <div style="max-width:720px">
+        <a href="{{ path('app_chats') }}" style="font-size:14px;color:#888">← Назад</a>
+        {% if conversation.listing %}
+            <a href="{{ path('app_listing_show', {id: conversation.listing.id}) }}" style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:12px 16px;margin:12px 0;text-decoration:none;color:inherit">
+                {% if conversation.listing.firstImage %}<img src="{{ conversation.listing.firstImage }}" style="width:48px;height:48px;border-radius:8px;object-fit:cover">{% endif %}
+                <div><div style="font-weight:600">{{ conversation.listing.title }}</div><div style="font-size:13px;color:#888">{{ conversation.listing.priceFormatted }}</div></div>
+            </a>
+        {% endif %}
+        <div class="chat-widget" data-controller="chat" style="height:500px">
+            {% include 'chat/_widget.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

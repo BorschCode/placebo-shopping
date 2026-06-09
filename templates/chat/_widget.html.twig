@@ -1,0 +1,22 @@
+{# Shared chat widget body — embedded inside theme-specific wrappers #}
+<div class="chat-widget__header">
+    💬
+    {% if conversation.listing %}
+        {{ conversation.listing.title|slice(0, 30) }}
+    {% else %}
+        Чат
+    {% endif %}
+</div>
+<div class="chat-widget__messages" data-chat-target="messages" id="chat-messages-{{ conversation.id }}">
+    {% for message in conversation.messages %}
+        {% include 'chat/_message.html.twig' with { currentUser: app.user } %}
+    {% endfor %}
+</div>
+<div class="chat-widget__input">
+    <form method="post" action="{{ path('app_chat_message', {id: conversation.id}) }}"
+          data-turbo-frame="chat-messages-{{ conversation.id }}"
+          data-action="submit->chat#messageAdded">
+        <input type="text" name="content" placeholder="Напишіть повідомлення..." data-chat-target="input" autocomplete="off" required>
+        <button type="submit">→</button>
+    </form>
+</div>

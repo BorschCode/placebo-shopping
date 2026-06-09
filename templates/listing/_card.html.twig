@@ -1,0 +1,15 @@
+<a href="{{ path('app_listing_show', {id: listing.id}) }}" class="listing-card" style="text-decoration:none;display:block">
+    {% if listing.firstImage %}
+        <img src="{{ listing.firstImage }}" alt="{{ listing.title }}" class="listing-card__img" loading="lazy">
+    {% else %}
+        <div class="listing-card__img-placeholder">🏷️</div>
+    {% endif %}
+    <div class="listing-card__body">
+        <div class="listing-card__price">{{ listing.priceFormatted }}</div>
+        <div class="listing-card__title">{{ listing.title }}</div>
+        <div class="listing-card__meta">
+            <span>{{ listing.category.icon }} {{ listing.category.name }}</span>
+            <span>{{ listing.location }}</span>
+        </div>
+    </div>
+</a>

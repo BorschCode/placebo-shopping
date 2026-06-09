@@ -1,0 +1,43 @@
+{% extends 'themes/olx/layout.html.twig' %}
+{% block title %}{{ listing.title }} — OLX{% endblock %}
+
+{% block theme_content %}
+    {# OLX: sidebar chat on the right side #}
+    <div class="listing-show-layout">
+        <div>
+            <div class="listing-detail__gallery">
+                {% for img in listing.images %}
+                    <img src="{{ img }}" alt="{{ listing.title }}" style="margin-bottom:8px">
+                {% endfor %}
+            </div>
+            <div class="listing-detail__info" style="margin-top:20px">
+                <div class="listing-detail__meta">{{ listing.category.icon }} {{ listing.category.name }} • {{ listing.location }} • {{ listing.createdAt|date('d.m.Y') }}</div>
+                <div class="listing-detail__title">{{ listing.title }}</div>
+                <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
+                <p class="listing-detail__desc">{{ listing.description }}</p>
+                <p style="font-size:13px;color:#888">Продавець: {{ listing.seller.profile ? listing.seller.profile.displayNameOrEmail : listing.seller.email }}</p>
+            </div>
+        </div>
+
+        <div class="chat-sidebar">
+            {% if listing.seller.id != app.user.id %}
+                {% if conversation %}
+                    <div class="chat-widget" data-controller="chat" style="height:480px">
+                        {% include 'chat/_widget.html.twig' %}
+                    </div>
+                {% else %}
+                    <div style="background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.1)">
+                        <p style="margin-bottom:16px;font-weight:600">Зв'яжіться з продавцем</p>
+                        <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}">
+                            <button type="submit" class="btn btn-primary btn-block">💬 Написати продавцю</button>
+                        </form>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div style="background:#fff;border-radius:12px;padding:24px">
+                    <p style="color:#888">Це ваше оголошення</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'themes/autoria/layout.html.twig' %}
+{% block title %}{{ listing.title }} — AutoRia{% endblock %}
+
+{% block theme_content %}
+    {# AutoRia: listing info top, chat panel below #}
+    <div class="listing-detail">
+        <div class="listing-detail__gallery">
+            {% for img in listing.images %}
+                <img src="{{ img }}" alt="{{ listing.title }}" style="margin-bottom:8px">
+            {% endfor %}
+        </div>
+        <div class="listing-detail__info">
+            <div class="listing-detail__meta">{{ listing.category.icon }} {{ listing.category.name }} • {{ listing.location }}</div>
+            <div class="listing-detail__title">{{ listing.title }}</div>
+            <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
+            <p class="listing-detail__desc">{{ listing.description }}</p>
+            <p style="font-size:13px;color:#888;margin-bottom:16px">Продавець: {{ listing.seller.profile ? listing.seller.profile.displayNameOrEmail : listing.seller.email }}</p>
+            {% if listing.seller.id != app.user.id and not conversation %}
+                <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}">
+                    <button type="submit" class="btn btn-primary">💬 Написати продавцю</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if listing.seller.id != app.user.id and conversation %}
+        <div class="chat-panel">
+            <h3 class="section-title">Переписка з продавцем</h3>
+            <div class="chat-widget" data-controller="chat" style="height:400px">
+                {% include 'chat/_widget.html.twig' %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

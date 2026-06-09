@@ -1,0 +1,48 @@
+{% extends 'themes/experinza/layout.html.twig' %}
+{% block title %}{{ listing.title }} — Experinza{% endblock %}
+
+{% block theme_content %}
+    {# Experinza: product detail, chat in floating bottom drawer #}
+    <div class="listing-detail" style="grid-template-columns:1fr 320px">
+        <div class="listing-detail__gallery">
+            {% for img in listing.images %}
+                <img src="{{ img }}" alt="{{ listing.title }}" style="margin-bottom:8px">
+            {% endfor %}
+        </div>
+        <div class="listing-detail__info">
+            <div class="listing-detail__meta">{{ listing.category.icon }} {{ listing.category.name }}</div>
+            <div class="listing-detail__title">{{ listing.title }}</div>
+            <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
+            <p class="listing-detail__desc">{{ listing.description }}</p>
+            {% if listing.seller.id != app.user.id %}
+                {% if not conversation %}
+                    <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}" style="margin-top:16px">
+                        <button type="submit" class="btn btn-primary btn-block">🛒 Замовити / запитати</button>
+                    </form>
+                {% else %}
+                    <button class="btn btn-primary btn-block" style="margin-top:16px"
+                            data-controller="chat" data-action="click->chat#toggleDrawer">
+                        💬 Переписка
+                    </button>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block chat_widget %}
+    {% if conversation and listing.seller.id != app.user.id %}
+        <div data-controller="chat" data-chat-mode-value="drawer">
+            {# Floating action button #}
+            <button class="chat-fab" data-action="click->chat#toggleDrawer" aria-label="Відкрити чат">💬</button>
+
+            {# Bottom drawer #}
+            <div class="chat-drawer" data-chat-target="drawer">
+                <div class="chat-drawer-handle"></div>
+                <div class="chat-widget">
+                    {% include 'chat/_widget.html.twig' %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
