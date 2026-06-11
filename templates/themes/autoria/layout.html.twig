@@ -7,9 +7,14 @@
         <a href="{{ path('app_home') }}" class="navbar-brand">🚗 AutoRia</a>
         <nav class="navbar-nav">
             <a href="{{ path('app_listings') }}">Авто</a>
-            <a href="{{ path('app_chats') }}">💬 Чати</a>
-            <a href="{{ path('app_profile') }}">{{ app.user.profile ? app.user.profile.displayNameOrEmail : app.user.email }}</a>
-            <a href="{{ path('app_logout') }}">Вийти</a>
+            {% if app.user %}
+                <a href="{{ path('app_chats') }}">💬 Чати</a>
+                <a href="{{ path('app_profile') }}">{{ app.user.profile ? app.user.profile.displayNameOrEmail : app.user.email }}</a>
+                <a href="{{ path('app_logout') }}">Вийти</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Увійти</a>
+                <a href="{{ path('app_register') }}">Реєстрація</a>
+            {% endif %}
         </nav>
     </nav>
 

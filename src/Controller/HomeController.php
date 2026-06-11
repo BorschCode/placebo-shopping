@@ -3,14 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Enum\Theme;
 use App\Repository\CategoryRepository;
 use App\Repository\ListingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('ROLE_USER')]
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
@@ -18,9 +17,8 @@ class HomeController extends AbstractController
         ListingRepository $listingRepo,
         CategoryRepository $categoryRepo,
     ): Response {
-        /** @var User $user */
         $user = $this->getUser();
-        $theme = $user->getTheme();
+        $theme = ($user instanceof User) ? $user->getTheme() : Theme::Olx;
 
         $listings = $listingRepo->findActiveByTheme($theme, 12);
         $categories = $categoryRepo->findByTheme($theme);

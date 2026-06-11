@@ -20,7 +20,7 @@
         </div>
 
         <div class="chat-sidebar">
-            {% if listing.seller.id != app.user.id %}
+            {% if app.user is null or listing.seller.id != app.user.id %}
                 {% if conversation %}
                     <div class="chat-widget" data-controller="chat" style="height:480px">
                         {% include 'chat/_widget.html.twig' %}

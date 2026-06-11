@@ -82,6 +82,13 @@ a:hover { text-decoration: underline; }
 .btn-block { width: 100%; }
 .btn-sm { padding: 6px 12px; font-size: 13px; }
 
+/* ── Breadcrumbs ── */
+.breadcrumbs { display: flex; gap: 8px; align-items: center; padding: 12px 24px; font-size: 14px; color: #888; }
+.breadcrumbs a { color: var(--accent, #4f46e5); text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }
+.breadcrumbs span { color: #555; }
+.breadcrumbs a + span::before, .breadcrumbs a + a::before { content: '/'; margin-right: 8px; color: #ccc; }
+
 /* ── Profile ── */
 .profile-page { display: flex; justify-content: center; padding: 40px 20px; }
 .profile-card { background: #fff; border-radius: 16px; padding: 40px; width: 100%; max-width: 540px; box-shadow: 0 2px 16px rgba(0,0,0,.08); }

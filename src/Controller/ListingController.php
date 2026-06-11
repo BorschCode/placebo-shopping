@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Listing;
 use App\Entity\User;
+use App\Enum\Theme;
 use App\Repository\CategoryRepository;
 use App\Repository\ConversationRepository;
 use App\Repository\ListingRepository;
@@ -11,9 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('ROLE_USER')]
 #[Route('/listings')]
 class ListingController extends AbstractController
 {
@@ -23,9 +22,8 @@ class ListingController extends AbstractController
         ListingRepository $listingRepo,
         CategoryRepository $categoryRepo,
     ): Response {
-        /** @var User $user */
         $user = $this->getUser();
-        $theme = $user->getTheme();
+        $theme = ($user instanceof User) ? $user->getTheme() : Theme::Olx;
 
         $categorySlug = $request->query->get('category');
         $category = $categorySlug ? $categoryRepo->findOneBy(['slug' => $categorySlug]) : null;
@@ -48,12 +46,11 @@ class ListingController extends AbstractController
         Listing $listing,
         ConversationRepository $conversationRepo,
     ): Response {
-        /** @var User $user */
         $user = $this->getUser();
-        $theme = $user->getTheme();
+        $theme = ($user instanceof User) ? $user->getTheme() : Theme::Olx;
 
         $conversation = null;
-        if ($listing->getSeller()?->getId() !== $user->getId()) {
+        if ($user instanceof User && $listing->getSeller()?->getId() !== $user->getId()) {
             $conversation = $conversationRepo->findBetweenUsersForListing(
                 $user,
                 $listing->getSeller(),

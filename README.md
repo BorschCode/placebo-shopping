@@ -29,6 +29,38 @@ Using Mock GPS data or Canvas animations, this simulates a delivery driver picki
 
 ---
 
+## 🧪 Test Fixtures
+
+Load sample data into the database for development and testing:
+
+```bash
+docker compose exec php bin/console doctrine:fixtures:load --no-interaction
+```
+
+### Seed Accounts
+
+| Email | Password | Role | Theme |
+| :--- | :--- | :--- | :--- |
+| `admin@placebo.local` | `password` | `ROLE_ADMIN` | OLX |
+| `user1@example.com` | `password` | `ROLE_USER` | AutoRia |
+| `user2@example.com` | `password` | `ROLE_USER` | Experinza |
+| `user3@example.com` … `user20@example.com` | `password` | `ROLE_USER` | cycling OLX → AutoRia → Experinza |
+
+### Seeded Data
+
+| Dataset | Count | Notes |
+| :--- | :--- | :--- |
+| Users + Profiles | 21 | Faker-generated Ukrainian names, cities, phones |
+| OLX categories | 9 | Електроніка, Авто, Нерухомість, Одяг, Дитячий світ, Робота, Послуги, Тварини, Хобі |
+| AutoRia categories | 8 | Легкові, Мотоцикли, Вантажівки, Спецтехніка, Автобуси, Запчастини, Аксесуари, Водний транспорт |
+| Experinza categories | 8 | Піца, Бургери, Суші, Напої, Десерти, Веганське, Піта/Шаурма, Здорове |
+| Listings | 60 | 20 per theme, random prices and picsum.photos images |
+| Conversations | 15 | 5 per theme, between distinct buyers and sellers |
+| Messages | ~75 | 3–7 Ukrainian-language messages per conversation |
+| Fake Orders | 20 | Mixed statuses, random 20–90 min delivery estimates |
+
+---
+
 ## 📊 Quick Statistics (Data Point #2694)
 
 | Metric | Detail |

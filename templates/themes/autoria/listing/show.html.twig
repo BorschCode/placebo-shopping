@@ -15,7 +15,7 @@
             <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
             <p class="listing-detail__desc">{{ listing.description }}</p>
             <p style="font-size:13px;color:#888;margin-bottom:16px">Продавець: {{ listing.seller.profile ? listing.seller.profile.displayNameOrEmail : listing.seller.email }}</p>
-            {% if listing.seller.id != app.user.id and not conversation %}
+            {% if (app.user is null or listing.seller.id != app.user.id) and not conversation %}
                 <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}">
                     <button type="submit" class="btn btn-primary">💬 Написати продавцю</button>
                 </form>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    {% if listing.seller.id != app.user.id and conversation %}
+    {% if (app.user is not null and listing.seller.id != app.user.id) and conversation %}
         <div class="chat-panel">
             <h3 class="section-title">Переписка з продавцем</h3>
             <div class="chat-widget" data-controller="chat" style="height:400px">

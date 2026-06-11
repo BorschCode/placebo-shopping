@@ -2,6 +2,10 @@
 {% block title %}Мій профіль{% endblock %}
 
 {% block body %}
+<nav class="breadcrumbs">
+    <a href="{{ path('app_home') }}">← Головна</a>
+    <span>Профіль</span>
+</nav>
 <div class="profile-page">
     <div class="profile-card">
         {% if user.profile and user.profile.avatarPath %}

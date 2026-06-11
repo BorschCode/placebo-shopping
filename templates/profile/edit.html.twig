@@ -2,6 +2,11 @@
 {% block title %}Редагувати профіль{% endblock %}
 
 {% block body %}
+<nav class="breadcrumbs">
+    <a href="{{ path('app_home') }}">← Головна</a>
+    <a href="{{ path('app_profile') }}">Профіль</a>
+    <span>Редагування</span>
+</nav>
 <div class="profile-page">
     <div class="profile-card">
         <h2>Редагувати профіль</h2>

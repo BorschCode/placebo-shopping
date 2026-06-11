@@ -14,7 +14,7 @@
             <div class="listing-detail__title">{{ listing.title }}</div>
             <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
             <p class="listing-detail__desc">{{ listing.description }}</p>
-            {% if listing.seller.id != app.user.id %}
+            {% if app.user is null or listing.seller.id != app.user.id %}
                 {% if not conversation %}
                     <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}" style="margin-top:16px">
                         <button type="submit" class="btn btn-primary btn-block">🛒 Замовити / запитати</button>
@@ -31,7 +31,7 @@
 {% endblock %}
 
 {% block chat_widget %}
-    {% if conversation and listing.seller.id != app.user.id %}
+    {% if conversation and app.user is not null and listing.seller.id != app.user.id %}
         <div data-controller="chat" data-chat-mode-value="drawer">
             {# Floating action button #}
             <button class="chat-fab" data-action="click->chat#toggleDrawer" aria-label="Відкрити чат">💬</button>
