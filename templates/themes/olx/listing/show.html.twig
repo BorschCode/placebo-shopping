@@ -6,9 +6,7 @@
     <div class="listing-show-layout">
         <div>
             <div class="listing-detail__gallery">
-                {% for img in listing.images %}
-                    <img src="{{ img }}" alt="{{ listing.title }}" style="margin-bottom:8px">
-                {% endfor %}
+                {% include 'listing/_gallery.html.twig' %}
             </div>
             <div class="listing-detail__info" style="margin-top:20px">
                 <div class="listing-detail__meta">{{ listing.category.icon }} {{ listing.category.name }} • {{ listing.location }} • {{ listing.createdAt|date('d.m.Y') }}</div>

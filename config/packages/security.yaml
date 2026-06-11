@@ -27,10 +27,14 @@ security:
                 secret: '%kernel.secret%'
                 lifetime: 604800
 
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_USER]
+
     access_control:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
         - { path: ^/verify, roles: PUBLIC_ACCESS }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/chats, roles: ROLE_USER }
         - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/, roles: PUBLIC_ACCESS }

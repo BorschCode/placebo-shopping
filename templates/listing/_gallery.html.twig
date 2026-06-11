@@ -1,0 +1,62 @@
+{# Shared image gallery: main viewer + thumbnail strip + lightbox #}
+{% if listing.images is not empty %}
+{% set total = listing.images|length %}
+<div class="gallery" data-controller="gallery">
+
+    {# ── Main viewer ── #}
+    <div class="gallery__main">
+        <img class="gallery__main-img"
+             data-gallery-target="main"
+             data-action="click->gallery#openLightbox"
+             src="{{ listing.images[0] }}"
+             alt="{{ listing.title }}">
+
+        {% if total > 1 %}
+            <button class="gallery__arrow gallery__arrow--prev"
+                    data-action="click.stop->gallery#prev" aria-label="Previous">‹</button>
+            <button class="gallery__arrow gallery__arrow--next"
+                    data-action="click.stop->gallery#next" aria-label="Next">›</button>
+            <div class="gallery__counter">
+                <span data-gallery-target="counter">1</span>&thinsp;/&thinsp;{{ total }}
+            </div>
+        {% endif %}
+    </div>
+
+    {# ── Thumbnail strip ── #}
+    {% if total > 1 %}
+    <div class="gallery__thumbs">
+        {% for img in listing.images %}
+            <img class="gallery__thumb{{ loop.first ? ' active' : '' }}"
+                 src="{{ img }}"
+                 alt="{{ listing.title }} {{ loop.index }}"
+                 data-gallery-target="thumb"
+                 data-action="click->gallery#select"
+                 data-gallery-index-param="{{ loop.index0 }}">
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {# ── Lightbox ── #}
+    <div class="gallery__lightbox"
+         data-gallery-target="lightbox"
+         data-action="click->gallery#lightboxBackdropClick">
+        <button class="gallery__lightbox-close"
+                data-action="click.stop->gallery#closeLightbox" aria-label="Close">×</button>
+        {% if total > 1 %}
+            <button class="gallery__lightbox-prev"
+                    data-action="click.stop->gallery#prev" aria-label="Previous">‹</button>
+            <button class="gallery__lightbox-next"
+                    data-action="click.stop->gallery#next" aria-label="Next">›</button>
+        {% endif %}
+        <img class="gallery__lightbox-img"
+             data-gallery-target="lightboxImg"
+             src="{{ listing.images[0] }}"
+             alt="{{ listing.title }}">
+        {% if total > 1 %}
+            <div class="gallery__lightbox-counter"
+                 data-gallery-target="lightboxCounter">1 / {{ total }}</div>
+        {% endif %}
+    </div>
+
+</div>
+{% endif %}
