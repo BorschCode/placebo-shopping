@@ -1,0 +1,99 @@
+common:
+  home: "მთავარი"
+  back: "← უკან"
+  save: "შენახვა"
+  cancel: "გაუქმება"
+
+nav:
+  listings: "განცხადებები"
+  autoria_listings: "მანქანები"
+  experinza_listings: "მენიუ"
+  messages: "💬 შეტყობინებები"
+  chats: "💬 ჩეტები"
+  logout: "გასვლა"
+  login: "შესვლა"
+  register: "რეგისტრაცია"
+
+title:
+  olx_home: "OLX — უფასო განცხადებები"
+  autoria_home: "AutoRia — იყიდე მანქანა"
+  experinza_home: "Experinza — შეუკვეთე საჭმელი"
+  olx_listings: "განცხადებები — OLX"
+  autoria_listings: "მანქანები — AutoRia"
+  experinza_listings: "მენიუ — Experinza"
+  olx_chats: "შეტყობინებები — OLX"
+  autoria_chats: "ჩეტები — AutoRia"
+  experinza_chats: "ჩეტები — Experinza"
+  login: "შესვლა — Placebo Shopping"
+  register: "რეგისტრაცია — Placebo Shopping"
+  my_profile: "ჩემი პროფილი"
+  edit_profile: "პროფილის რედაქტირება"
+
+home:
+  popular_categories: "პოპულარული კატეგორიები"
+  fresh_listings: "ახალი განცხადებები"
+  no_listings: "განცხადებები ჯერ არ არის."
+
+autoria:
+  home:
+    headline: "იპოვე შენი მანქანა"
+    subheadline: "ათასობით შემოწმებული მანქანა მთელ ქვეყანაში"
+    new_listings: "ახალი განცხადებები"
+  chat:
+    my_chats: "ჩემი ჩეტები"
+
+experinza:
+  home:
+    headline: "🍕 მშიათ?"
+    subheadline: "შეუკვეთე საყვარელი საჭმელი 30 წუთში"
+    popular_today: "პოპულარული დღეს"
+    no_items: "კერძები ჯერ არ არის."
+  chat:
+    my_orders: "ჩემი შეკვეთები / ჩეტები"
+    no_conversations: "ჩეტები ჯერ არ გაქვთ. შეუკვეთეთ რაიმე!"
+  not_found: "კერძები ვერ მოიძებნა."
+  order_btn: "🛒 შეკვეთა / კითხვა"
+  conversation_btn: "💬 ჩეტი"
+
+listings:
+  all: "ყველა"
+  not_found: "განცხადებები ვერ მოიძებნა."
+
+listing:
+  seller: "გამყიდველი"
+  contact_title: "დაუკავშირდით გამყიდველს"
+  contact_btn: "💬 დაწერე გამყიდველს"
+  your_listing: "ეს თქვენი განცხადებაა"
+  chat_with_seller: "ჩეტი გამყიდველთან"
+
+chat:
+  messages_title: "შეტყობინებები"
+  no_conversations: "საუბრები ჯერ არ გაქვთ."
+  widget_title: "ჩეტი"
+  placeholder: "დაწერეთ შეტყობინება..."
+
+profile:
+  title: "პროფილი"
+  editing: "რედაქტირება"
+  edit_title: "პროფილის რედაქტირება"
+  edit_btn: "პროფილის რედაქტირება"
+  avatar: "ავატარი"
+  theme_label: "თემა"
+  theme_picker: "გაფორმების თემა"
+  name: "სახელი"
+  bio: "ჩემ შესახებ"
+  phone: "ტელეფონი"
+  location: "ქალაქი"
+  current_photo: "მიმდინარე ფოტო"
+
+auth:
+  login_title: "შეხვიდეთ"
+  login_btn: "შეხვიდეთ"
+  register_title: "რეგისტრაცია"
+  register_btn: "დარეგისტრირება"
+  password: "პაროლი"
+  remember_me: "გამახსოვრება"
+  no_account: "არ გაქვთ ანგარიში?"
+  register_link: "დარეგისტრირება"
+  has_account: "უკვე გაქვთ ანგარიში?"
+  login_link: "შეხვიდეთ"
