@@ -6,15 +6,16 @@
     <nav class="navbar">
         <a href="{{ path('app_home') }}" class="navbar-brand">🍕 Experinza</a>
         <nav class="navbar-nav">
-            <a href="{{ path('app_listings') }}">Меню</a>
+            <a href="{{ path('app_listings') }}">{{ 'nav.experinza_listings'|trans }}</a>
             {% if app.user %}
                 <a href="{{ path('app_chats') }}">💬</a>
                 <a href="{{ path('app_profile') }}">{{ app.user.profile ? app.user.profile.displayNameOrEmail : app.user.email }}</a>
-                <a href="{{ path('app_logout') }}">Вийти</a>
+                <a href="{{ path('app_logout') }}">{{ 'nav.logout'|trans }}</a>
             {% else %}
-                <a href="{{ path('app_login') }}">Увійти</a>
-                <a href="{{ path('app_register') }}">Реєстрація</a>
+                <a href="{{ path('app_login') }}">{{ 'nav.login'|trans }}</a>
+                <a href="{{ path('app_register') }}">{{ 'nav.register'|trans }}</a>
             {% endif %}
+            {% include '_locale_switcher.html.twig' %}
         </nav>
     </nav>
 

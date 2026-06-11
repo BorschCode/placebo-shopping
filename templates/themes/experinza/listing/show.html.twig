@@ -17,12 +17,12 @@
             {% if app.user is null or listing.seller.id != app.user.id %}
                 {% if not conversation %}
                     <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}" style="margin-top:16px">
-                        <button type="submit" class="btn btn-primary btn-block">🛒 Замовити / запитати</button>
+                        <button type="submit" class="btn btn-primary btn-block">{{ 'experinza.order_btn'|trans }}</button>
                     </form>
                 {% else %}
                     <button class="btn btn-primary btn-block" style="margin-top:16px"
                             data-controller="chat" data-action="click->chat#toggleDrawer">
-                        💬 Переписка
+                        {{ 'experinza.conversation_btn'|trans }}
                     </button>
                 {% endif %}
             {% endif %}

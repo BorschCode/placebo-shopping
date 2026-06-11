@@ -15,7 +15,7 @@
                 <div class="listing-detail__title">{{ listing.title }}</div>
                 <div class="listing-detail__price">{{ listing.priceFormatted }}</div>
                 <p class="listing-detail__desc">{{ listing.description }}</p>
-                <p style="font-size:13px;color:#888">Продавець: {{ listing.seller.profile ? listing.seller.profile.displayNameOrEmail : listing.seller.email }}</p>
+                <p style="font-size:13px;color:#888">{{ 'listing.seller'|trans }}: {{ listing.seller.profile ? listing.seller.profile.displayNameOrEmail : listing.seller.email }}</p>
             </div>
         </div>
 
@@ -27,15 +27,15 @@
                     </div>
                 {% else %}
                     <div style="background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.1)">
-                        <p style="margin-bottom:16px;font-weight:600">Зв'яжіться з продавцем</p>
+                        <p style="margin-bottom:16px;font-weight:600">{{ 'listing.contact_title'|trans }}</p>
                         <form method="post" action="{{ path('app_chat_start', {id: listing.id}) }}">
-                            <button type="submit" class="btn btn-primary btn-block">💬 Написати продавцю</button>
+                            <button type="submit" class="btn btn-primary btn-block">{{ 'listing.contact_btn'|trans }}</button>
                         </form>
                     </div>
                 {% endif %}
             {% else %}
                 <div style="background:#fff;border-radius:12px;padding:24px">
-                    <p style="color:#888">Це ваше оголошення</p>
+                    <p style="color:#888">{{ 'listing.your_listing'|trans }}</p>
                 </div>
             {% endif %}
         </div>

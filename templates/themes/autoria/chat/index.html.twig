@@ -1,10 +1,10 @@
 {% extends 'themes/autoria/layout.html.twig' %}
-{% block title %}Чати — AutoRia{% endblock %}
+{% block title %}{{ 'title.autoria_chats'|trans }}{% endblock %}
 
 {% block theme_content %}
-    <h2 class="section-title">Мої чати</h2>
+    <h2 class="section-title">{{ 'autoria.chat.my_chats'|trans }}</h2>
     {% if conversations is empty %}
-        <p style="color:#888">У вас ще немає переписок.</p>
+        <p style="color:#888">{{ 'chat.no_conversations'|trans }}</p>
     {% else %}
         <div class="chats-list">
             {% for conv in conversations %}

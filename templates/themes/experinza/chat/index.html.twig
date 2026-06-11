@@ -1,10 +1,10 @@
 {% extends 'themes/experinza/layout.html.twig' %}
-{% block title %}Чати — Experinza{% endblock %}
+{% block title %}{{ 'title.experinza_chats'|trans }}{% endblock %}
 
 {% block theme_content %}
-    <h2 class="section-title">Мої замовлення / переписки</h2>
+    <h2 class="section-title">{{ 'experinza.chat.my_orders'|trans }}</h2>
     {% if conversations is empty %}
-        <p style="color:#888">Поки немає переписок. Замовте щось!</p>
+        <p style="color:#888">{{ 'experinza.chat.no_conversations'|trans }}</p>
     {% else %}
         <div class="chats-list">
             {% for conv in conversations %}

@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
-{% block title %}Мій профіль{% endblock %}
+{% block title %}{{ 'title.my_profile'|trans }}{% endblock %}
 
 {% block body %}
 <nav class="breadcrumbs">
-    <a href="{{ path('app_home') }}">← Головна</a>
-    <span>Профіль</span>
+    <a href="{{ path('app_home') }}">← {{ 'common.home'|trans }}</a>
+    <span>{{ 'profile.title'|trans }}</span>
 </nav>
 <div class="profile-page">
     <div class="profile-card">
         {% if user.profile and user.profile.avatarPath %}
-            <img src="{{ user.profile.avatarPath }}" alt="Аватар" class="profile-avatar">
+            <img src="{{ user.profile.avatarPath }}" alt="{{ 'profile.avatar'|trans }}" class="profile-avatar">
         {% else %}
             <div class="profile-avatar-placeholder">{{ (user.profile.displayName ?? user.email)|slice(0,1)|upper }}</div>
         {% endif %}
@@ -23,8 +23,9 @@
         {% if user.profile and user.profile.phone %}
             <p class="profile-phone">📞 {{ user.profile.phone }}</p>
         {% endif %}
-        <p class="profile-theme">Тема: <strong>{{ user.theme.label() }}</strong></p>
-        <a href="{{ path('app_profile_edit') }}" class="btn btn-primary">Редагувати профіль</a>
+        <p class="profile-theme">{{ 'profile.theme_label'|trans }}: <strong>{{ user.theme.label() }}</strong></p>
+        <a href="{{ path('app_profile_edit') }}" class="btn btn-primary">{{ 'profile.edit_btn'|trans }}</a>
+        <div style="margin-top:16px">{% include '_locale_switcher.html.twig' %}</div>
     </div>
 </div>
 {% endblock %}

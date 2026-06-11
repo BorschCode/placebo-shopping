@@ -4,7 +4,7 @@
     {% if conversation.listing %}
         {{ conversation.listing.title|slice(0, 30) }}
     {% else %}
-        Чат
+        {{ 'chat.widget_title'|trans }}
     {% endif %}
 </div>
 <div class="chat-widget__messages" data-chat-target="messages" id="chat-messages-{{ conversation.id }}">
@@ -16,7 +16,7 @@
     <form method="post" action="{{ path('app_chat_message', {id: conversation.id}) }}"
           data-turbo-frame="chat-messages-{{ conversation.id }}"
           data-action="submit->chat#messageAdded">
-        <input type="text" name="content" placeholder="Напишіть повідомлення..." data-chat-target="input" autocomplete="off" required>
+        <input type="text" name="content" placeholder="{{ 'chat.placeholder'|trans }}" data-chat-target="input" autocomplete="off" required>
         <button type="submit">→</button>
     </form>
 </div>

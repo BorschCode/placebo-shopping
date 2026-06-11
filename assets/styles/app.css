@@ -82,6 +82,11 @@ a:hover { text-decoration: underline; }
 .btn-block { width: 100%; }
 .btn-sm { padding: 6px 12px; font-size: 13px; }
 
+/* ── Locale switcher ── */
+.locale-switcher { display: flex; gap: 6px; align-items: center; }
+.locale-switcher a { font-size: 18px; opacity: 0.4; text-decoration: none; line-height: 1; transition: opacity .15s; }
+.locale-switcher a:hover, .locale-switcher a.active { opacity: 1; }
+
 /* ── Breadcrumbs ── */
 .breadcrumbs { display: flex; gap: 8px; align-items: center; padding: 12px 24px; font-size: 14px; color: #888; }
 .breadcrumbs a { color: var(--accent, #4f46e5); text-decoration: none; }
