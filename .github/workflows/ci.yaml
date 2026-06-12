@@ -42,7 +42,7 @@ jobs:
       - name: Start services
         run: docker compose up --wait --no-build
       - name: Check HTTP reachability
-        run: curl -v --fail-with-body http://localhost:${HTTP_PORT:-8071}
+        run: curl -v --fail-with-body "http://localhost:${HTTP_PORT:-8071}"
       # Uncomment when the homepage is configured, or change the path to check
       # - name: Check HTTPS reachability
       #   run: curl -v --insecure --fail-with-body https://localhost:${HTTPS_PORT:-8443}
@@ -88,3 +88,10 @@ jobs:
           VALIDATE_PHP_PHPCS: false
           VALIDATE_PHP_PHPSTAN: false
           VALIDATE_PHP_PSALM: false
+          # Project does not use prettier or editorconfig enforcement yet.
+          VALIDATE_CSS_PRETTIER: false
+          VALIDATE_EDITORCONFIG: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false

@@ -8,9 +8,9 @@ Inspired by the rising Gen Z trend in South Korea dubbed **"Dopamine Sites,"** t
 
 ## 🇰🇷 Trend Spotlight: The South Korean "Fake Consumption" Wave
 
-According to *The Korea Times*, South Korean Gen Z youth are turning to simulated web environments to cope with stress and economic pressures. 
+According to *The Korea Times*, South Korean Gen Z youth are turning to simulated web environments to cope with stress and economic pressures.
 
-### 🧠 The Psychology Behind It:
+### 🧠 The Psychology Behind It
 * **The Mechanics:** Users create virtual shopping carts, simulate checkouts, and actively track a "phantom" delivery driver on a live map interface.
 * **The Goal:** It tricks the brain's reward center into feeling the rush of consumption, providing temporary psychological comfort and successfully suppressing real-world impulsive shopping desires.
 

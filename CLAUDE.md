@@ -59,7 +59,7 @@ docker compose exec php composer install
 
 ## Architecture
 
-```
+```text
 src/
   Controller/   # Symfony controllers (empty at init)
   Entity/       # Doctrine entities (empty at init)
