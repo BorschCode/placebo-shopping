@@ -82,9 +82,9 @@ jobs:
           VALIDATE_TRIVY: false
           VALIDATE_BIOME_FORMAT: false
           VALIDATE_BIOME_LINT: false
-          # super-linter runs `composer install` before these linters, which
+          # super-linter runs `composer install` before any PHP linter, which
           # fails because its Alpine PHP image lacks ext-xml / ext-fileinfo.
-          # The project has no phpcs/phpstan/psalm config anyway.
+          VALIDATE_PHP_BUILTIN: false
           VALIDATE_PHP_PHPCS: false
           VALIDATE_PHP_PHPSTAN: false
           VALIDATE_PHP_PSALM: false
