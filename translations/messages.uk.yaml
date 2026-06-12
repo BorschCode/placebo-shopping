@@ -1,0 +1,99 @@
+common:
+  home: "Головна"
+  back: "← Назад"
+  save: "Зберегти"
+  cancel: "Скасувати"
+
+nav:
+  listings: "Оголошення"
+  autoria_listings: "Авто"
+  experinza_listings: "Меню"
+  messages: "💬 Повідомлення"
+  chats: "💬 Чати"
+  logout: "Вийти"
+  login: "Увійти"
+  register: "Реєстрація"
+
+title:
+  olx_home: "OLX — Безкоштовні оголошення"
+  autoria_home: "AutoRia — Продаж авто в Україні"
+  experinza_home: "Experinza — Замов їжу онлайн"
+  olx_listings: "Оголошення — OLX"
+  autoria_listings: "Авто — AutoRia"
+  experinza_listings: "Меню — Experinza"
+  olx_chats: "Повідомлення — OLX"
+  autoria_chats: "Чати — AutoRia"
+  experinza_chats: "Чати — Experinza"
+  login: "Вхід — Placebo Shopping"
+  register: "Реєстрація — Placebo Shopping"
+  my_profile: "Мій профіль"
+  edit_profile: "Редагувати профіль"
+
+home:
+  popular_categories: "Популярні категорії"
+  fresh_listings: "Свіжі оголошення"
+  no_listings: "Оголошень поки немає."
+
+autoria:
+  home:
+    headline: "Знайди своє авто"
+    subheadline: "Тисячі перевірених авто по всій Україні"
+    new_listings: "Нові оголошення"
+  chat:
+    my_chats: "Мої чати"
+
+experinza:
+  home:
+    headline: "🍕 Голодний?"
+    subheadline: "Замов улюблену їжу за 30 хвилин"
+    popular_today: "Популярне сьогодні"
+    no_items: "Страв поки немає."
+  chat:
+    my_orders: "Мої замовлення / переписки"
+    no_conversations: "Поки немає переписок. Замовте щось!"
+  not_found: "Страв не знайдено."
+  order_btn: "🛒 Замовити / запитати"
+  conversation_btn: "💬 Переписка"
+
+listings:
+  all: "Всі"
+  not_found: "Оголошень не знайдено."
+
+listing:
+  seller: "Продавець"
+  contact_title: "Зв'яжіться з продавцем"
+  contact_btn: "💬 Написати продавцю"
+  your_listing: "Це ваше оголошення"
+  chat_with_seller: "Переписка з продавцем"
+
+chat:
+  messages_title: "Повідомлення"
+  no_conversations: "У вас ще немає переписок."
+  widget_title: "Чат"
+  placeholder: "Напишіть повідомлення..."
+
+profile:
+  title: "Профіль"
+  editing: "Редагування"
+  edit_title: "Редагувати профіль"
+  edit_btn: "Редагувати профіль"
+  avatar: "Аватар"
+  theme_label: "Тема"
+  theme_picker: "Тема оформлення"
+  name: "Ім'я"
+  bio: "Про себе"
+  phone: "Телефон"
+  location: "Місто"
+  current_photo: "Поточне фото"
+
+auth:
+  login_title: "Увійти"
+  login_btn: "Увійти"
+  register_title: "Реєстрація"
+  register_btn: "Зареєструватись"
+  password: "Пароль"
+  remember_me: "Запам'ятати мене"
+  no_account: "Немає акаунту?"
+  register_link: "Зареєструватись"
+  has_account: "Вже є акаунт?"
+  login_link: "Увійти"

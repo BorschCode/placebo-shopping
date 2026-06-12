@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'title.edit_profile'|trans }}{% endblock %}
+
+{% block body %}
+<nav class="breadcrumbs">
+    <a href="{{ path('app_home') }}">← {{ 'common.home'|trans }}</a>
+    <a href="{{ path('app_profile') }}">{{ 'profile.title'|trans }}</a>
+    <span>{{ 'profile.editing'|trans }}</span>
+</nav>
+<div class="profile-page">
+    <div class="profile-card">
+        <h2>{{ 'profile.edit_title'|trans }}</h2>
+
+        {{ form_start(form, {'attr': {'class': 'profile-form', 'enctype': 'multipart/form-data'}}) }}
+            <div class="form-group">
+                {{ form_label(form.displayName, 'profile.name'|trans) }}
+                {{ form_widget(form.displayName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.displayName) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.bio, 'profile.bio'|trans) }}
+                {{ form_widget(form.bio, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.phone, 'profile.phone'|trans) }}
+                {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.location, 'profile.location'|trans) }}
+                {{ form_widget(form.location, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.avatarFile) }}
+                {{ form_widget(form.avatarFile) }}
+                {{ form_errors(form.avatarFile) }}
+                {% if user.profile and user.profile.avatarPath %}
+                    <img src="{{ user.profile.avatarPath }}" alt="{{ 'profile.current_photo'|trans }}" style="width:60px;height:60px;border-radius:50%;margin-top:8px;object-fit:cover">
+                {% endif %}
+            </div>
+            <div class="form-group theme-picker">
+                <p><strong>{{ 'profile.theme_picker'|trans }}</strong></p>
+                <div class="theme-options">
+                    {% for choice in form.theme %}
+                        <label class="theme-option {% if choice.vars.data == user.theme.value %}active{% endif %}">
+                            {{ form_widget(choice) }}
+                            <span>{{ choice.vars.label }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">{{ 'common.save'|trans }}</button>
+                <a href="{{ path('app_profile') }}" class="btn btn-secondary">{{ 'common.cancel'|trans }}</a>
+            </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

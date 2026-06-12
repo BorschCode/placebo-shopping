@@ -1,0 +1,99 @@
+common:
+  home: "Home"
+  back: "← Back"
+  save: "Save"
+  cancel: "Cancel"
+
+nav:
+  listings: "Listings"
+  autoria_listings: "Cars"
+  experinza_listings: "Menu"
+  messages: "💬 Messages"
+  chats: "💬 Chats"
+  logout: "Log out"
+  login: "Log in"
+  register: "Register"
+
+title:
+  olx_home: "OLX — Free classifieds"
+  autoria_home: "AutoRia — Buy cars"
+  experinza_home: "Experinza — Order food online"
+  olx_listings: "Listings — OLX"
+  autoria_listings: "Cars — AutoRia"
+  experinza_listings: "Menu — Experinza"
+  olx_chats: "Messages — OLX"
+  autoria_chats: "Chats — AutoRia"
+  experinza_chats: "Chats — Experinza"
+  login: "Sign in — Placebo Shopping"
+  register: "Register — Placebo Shopping"
+  my_profile: "My profile"
+  edit_profile: "Edit profile"
+
+home:
+  popular_categories: "Popular categories"
+  fresh_listings: "Fresh listings"
+  no_listings: "No listings yet."
+
+autoria:
+  home:
+    headline: "Find your car"
+    subheadline: "Thousands of verified cars all over Ukraine"
+    new_listings: "New listings"
+  chat:
+    my_chats: "My chats"
+
+experinza:
+  home:
+    headline: "🍕 Hungry?"
+    subheadline: "Order your favourite food in 30 minutes"
+    popular_today: "Popular today"
+    no_items: "No items yet."
+  chat:
+    my_orders: "My orders / chats"
+    no_conversations: "No chats yet. Order something!"
+  not_found: "No items found."
+  order_btn: "🛒 Order / ask"
+  conversation_btn: "💬 Chat"
+
+listings:
+  all: "All"
+  not_found: "No listings found."
+
+listing:
+  seller: "Seller"
+  contact_title: "Contact seller"
+  contact_btn: "💬 Write to seller"
+  your_listing: "This is your listing"
+  chat_with_seller: "Chat with seller"
+
+chat:
+  messages_title: "Messages"
+  no_conversations: "You have no conversations yet."
+  widget_title: "Chat"
+  placeholder: "Write a message..."
+
+profile:
+  title: "Profile"
+  editing: "Edit"
+  edit_title: "Edit profile"
+  edit_btn: "Edit profile"
+  avatar: "Avatar"
+  theme_label: "Theme"
+  theme_picker: "Appearance theme"
+  name: "Name"
+  bio: "About me"
+  phone: "Phone"
+  location: "City"
+  current_photo: "Current photo"
+
+auth:
+  login_title: "Log in"
+  login_btn: "Log in"
+  register_title: "Register"
+  register_btn: "Register"
+  password: "Password"
+  remember_me: "Remember me"
+  no_account: "No account?"
+  register_link: "Register"
+  has_account: "Already have an account?"
+  login_link: "Log in"

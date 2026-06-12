@@ -1,0 +1,99 @@
+common:
+  home: "Strona główna"
+  back: "← Wróć"
+  save: "Zapisz"
+  cancel: "Anuluj"
+
+nav:
+  listings: "Ogłoszenia"
+  autoria_listings: "Samochody"
+  experinza_listings: "Menu"
+  messages: "💬 Wiadomości"
+  chats: "💬 Czaty"
+  logout: "Wyloguj"
+  login: "Zaloguj"
+  register: "Rejestracja"
+
+title:
+  olx_home: "OLX — Darmowe ogłoszenia"
+  autoria_home: "AutoRia — Kup samochód"
+  experinza_home: "Experinza — Zamów jedzenie"
+  olx_listings: "Ogłoszenia — OLX"
+  autoria_listings: "Samochody — AutoRia"
+  experinza_listings: "Menu — Experinza"
+  olx_chats: "Wiadomości — OLX"
+  autoria_chats: "Czaty — AutoRia"
+  experinza_chats: "Czaty — Experinza"
+  login: "Logowanie — Placebo Shopping"
+  register: "Rejestracja — Placebo Shopping"
+  my_profile: "Mój profil"
+  edit_profile: "Edytuj profil"
+
+home:
+  popular_categories: "Popularne kategorie"
+  fresh_listings: "Nowe ogłoszenia"
+  no_listings: "Brak ogłoszeń."
+
+autoria:
+  home:
+    headline: "Znajdź swój samochód"
+    subheadline: "Tysiące sprawdzonych samochodów w całym kraju"
+    new_listings: "Nowe ogłoszenia"
+  chat:
+    my_chats: "Moje czaty"
+
+experinza:
+  home:
+    headline: "🍕 Głodny?"
+    subheadline: "Zamów ulubione jedzenie w 30 minut"
+    popular_today: "Popularne dziś"
+    no_items: "Brak dań."
+  chat:
+    my_orders: "Moje zamówienia / rozmowy"
+    no_conversations: "Brak rozmów. Zamów coś!"
+  not_found: "Nie znaleziono dań."
+  order_btn: "🛒 Zamów / zapytaj"
+  conversation_btn: "💬 Czat"
+
+listings:
+  all: "Wszystkie"
+  not_found: "Nie znaleziono ogłoszeń."
+
+listing:
+  seller: "Sprzedawca"
+  contact_title: "Skontaktuj się ze sprzedawcą"
+  contact_btn: "💬 Napisz do sprzedawcy"
+  your_listing: "To twoje ogłoszenie"
+  chat_with_seller: "Rozmowa ze sprzedawcą"
+
+chat:
+  messages_title: "Wiadomości"
+  no_conversations: "Nie masz jeszcze żadnych rozmów."
+  widget_title: "Czat"
+  placeholder: "Napisz wiadomość..."
+
+profile:
+  title: "Profil"
+  editing: "Edycja"
+  edit_title: "Edytuj profil"
+  edit_btn: "Edytuj profil"
+  avatar: "Awatar"
+  theme_label: "Motyw"
+  theme_picker: "Motyw wyglądu"
+  name: "Imię"
+  bio: "O mnie"
+  phone: "Telefon"
+  location: "Miasto"
+  current_photo: "Aktualne zdjęcie"
+
+auth:
+  login_title: "Zaloguj się"
+  login_btn: "Zaloguj się"
+  register_title: "Rejestracja"
+  register_btn: "Zarejestruj się"
+  password: "Hasło"
+  remember_me: "Pamiętaj mnie"
+  no_account: "Nie masz konta?"
+  register_link: "Zarejestruj się"
+  has_account: "Masz już konto?"
+  login_link: "Zaloguj się"

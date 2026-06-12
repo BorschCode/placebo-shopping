@@ -1,0 +1,24 @@
+{% extends 'themes/experinza/layout.html.twig' %}
+{% block title %}{{ 'title.experinza_home'|trans }}{% endblock %}
+
+{% block theme_content %}
+    <div style="background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;border-radius:20px;padding:32px;margin-bottom:28px">
+        <h1 style="font-size:28px;font-weight:800;margin-bottom:8px">{{ 'experinza.home.headline'|trans }}</h1>
+        <p style="opacity:.9">{{ 'experinza.home.subheadline'|trans }}</p>
+    </div>
+
+    <div class="category-bar">
+        {% for cat in categories %}
+            <a href="{{ path('app_listings', {category: cat.slug}) }}" class="category-chip">{{ cat.icon }} {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">{{ 'experinza.home.popular_today'|trans }}</h2>
+    <div class="listing-grid">
+        {% for listing in listings %}
+            {% include 'listing/_card.html.twig' %}
+        {% else %}
+            <p style="color:#888">{{ 'experinza.home.no_items'|trans }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

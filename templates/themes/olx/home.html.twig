@@ -1,0 +1,20 @@
+{% extends 'themes/olx/layout.html.twig' %}
+{% block title %}{{ 'title.olx_home'|trans }}{% endblock %}
+
+{% block theme_content %}
+    <h2 class="section-title">{{ 'home.popular_categories'|trans }}</h2>
+    <div class="category-bar">
+        {% for cat in categories %}
+            <a href="{{ path('app_listings', {category: cat.slug}) }}" class="category-chip">{{ cat.icon }} {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+
+    <h2 class="section-title">{{ 'home.fresh_listings'|trans }}</h2>
+    <div class="listing-grid">
+        {% for listing in listings %}
+            {% include 'listing/_card.html.twig' %}
+        {% else %}
+            <p style="color:#888">{{ 'home.no_listings'|trans }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

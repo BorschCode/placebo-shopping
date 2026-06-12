@@ -1,0 +1,21 @@
+{% extends 'themes/autoria/layout.html.twig' %}
+{% block title %}{{ 'title.autoria_listings'|trans }}{% endblock %}
+
+{% block theme_content %}
+    <div class="category-bar">
+        <a href="{{ path('app_listings') }}" class="category-chip {{ activeCategory is null ? 'active' : '' }}">{{ 'listings.all'|trans }}</a>
+        {% for cat in categories %}
+            <a href="{{ path('app_listings', {category: cat.slug}) }}"
+               class="category-chip {{ activeCategory and activeCategory.id == cat.id ? 'active' : '' }}">
+                {{ cat.icon }} {{ cat.name }}
+            </a>
+        {% endfor %}
+    </div>
+    <div class="listing-grid">
+        {% for listing in listings %}
+            {% include 'listing/_card.html.twig' %}
+        {% else %}
+            <p style="color:#888;grid-column:1/-1">{{ 'listings.not_found'|trans }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

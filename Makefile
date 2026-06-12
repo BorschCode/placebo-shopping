@@ -61,6 +61,21 @@ test: ## Run the full PHPUnit suite
 test-filter: ## Run tests matching a filter — usage: make test-filter f=MyTest
 	$(APP) bin/phpunit --filter $(f)
 
+##@ Lint
+
+lint-twig: ## Lint all Twig templates
+	$(APP) bin/console lint:twig templates/
+
+lint-yaml: ## Lint all YAML config and translation files
+	$(APP) bin/console lint:yaml config/ translations/
+
+lint-container: ## Check the DI container for errors
+	$(APP) bin/console lint:container
+
+lint: lint-twig lint-yaml lint-container schema-validate ## Run all linters (Twig, YAML, container, Doctrine schema)
+
+check: lint test ## Run all linters then the full test suite
+
 ##@ Composer
 
 composer-install: ## Install PHP dependencies

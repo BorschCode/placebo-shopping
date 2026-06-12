@@ -1,0 +1,6 @@
+<div class="locale-switcher">
+    <a href="{{ path('app_switch_locale', {locale: 'uk'}) }}" class="{{ app.request.locale == 'uk' ? 'active' : '' }}" title="Українська">🇺🇦</a>
+    <a href="{{ path('app_switch_locale', {locale: 'en'}) }}" class="{{ app.request.locale == 'en' ? 'active' : '' }}" title="English">🇬🇧</a>
+    <a href="{{ path('app_switch_locale', {locale: 'ka'}) }}" class="{{ app.request.locale == 'ka' ? 'active' : '' }}" title="ქართული">🇬🇪</a>
+    <a href="{{ path('app_switch_locale', {locale: 'pl'}) }}" class="{{ app.request.locale == 'pl' ? 'active' : '' }}" title="Polski">🇵🇱</a>
+</div>

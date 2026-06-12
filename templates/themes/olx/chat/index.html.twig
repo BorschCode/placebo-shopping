@@ -1,0 +1,27 @@
+{% extends 'themes/olx/layout.html.twig' %}
+{% block title %}{{ 'title.olx_chats'|trans }}{% endblock %}
+
+{% block theme_content %}
+    <h2 class="section-title">{{ 'chat.messages_title'|trans }}</h2>
+    {% if conversations is empty %}
+        <p style="color:#888">{{ 'chat.no_conversations'|trans }}</p>
+    {% else %}
+        <div class="chats-list">
+            {% for conv in conversations %}
+                {% set other = conv.otherParticipant(app.user) %}
+                <a href="{{ path('app_chat_show', {id: conv.id}) }}" class="chat-item" style="text-decoration:none">
+                    <div class="chat-item__avatar">{{ (other.profile ? other.profile.displayNameOrEmail : other.email)|slice(0,1)|upper }}</div>
+                    <div class="chat-item__info">
+                        <div class="chat-item__name">{{ other.profile ? other.profile.displayNameOrEmail : other.email }}</div>
+                        <div class="chat-item__preview">
+                            {% if conv.listing %}📦 {{ conv.listing.title|slice(0,40) }}{% endif %}
+                            {% set last = conv.lastMessage %}
+                            {% if last %} — {{ last.content|slice(0,50) }}{% endif %}
+                        </div>
+                    </div>
+                    <div class="chat-item__time">{{ conv.createdAt|date('d.m') }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
