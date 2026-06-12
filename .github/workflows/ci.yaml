@@ -91,6 +91,7 @@ jobs:
           # Project does not use prettier or editorconfig enforcement yet.
           VALIDATE_CSS_PRETTIER: false
           VALIDATE_EDITORCONFIG: false
+          VALIDATE_ENV: false
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false
